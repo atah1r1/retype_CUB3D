@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:56:09 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 12:58:10 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/10/29 14:00:37 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ int		read_line(char *line)
 	if (ft_strncmp(line, "R ", 2) == 0 && read_resolution(line) == ERROR)
 		return (set_error("res error!"));
 	else if (ft_strncmp(line, "NO", 2) == 0
-		&& read_texture(line, &texture[0]) == ERROR)
+		&& read_texture(line, &g_texture[0]) == ERROR)
 		return (set_error("no error!"));
 	else if (ft_strncmp(line, "SO", 2) == 0
-		&& read_texture(line, &texture[1]) == ERROR)
+		&& read_texture(line, &g_texture[1]) == ERROR)
 		return (set_error("no error!"));
 	else if (ft_strncmp(line, "WE", 2) == 0
-		&& read_texture(line, &texture[3]) == ERROR)
+		&& read_texture(line, &g_texture[3]) == ERROR)
 		return (set_error("no error!"));
 	else if (ft_strncmp(line, "EA", 2) == 0
-		&& read_texture(line, &texture[2]) == ERROR)
+		&& read_texture(line, &g_texture[2]) == ERROR)
 		return (set_error("no error!"));
 	else if (ft_strncmp(line, "S ", 2) == 0
-		&& read_texture(line, &texture[4]) == ERROR)
+		&& read_texture(line, &g_texture[4]) == ERROR)
 		return (set_error("s error!"));
 	else if (ft_strncmp(line, "F ", 2) == 0
 		&& read_color(line, &(g_data->floor)) == ERROR)

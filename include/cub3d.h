@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 12:53:22 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/10/29 14:22:35 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@
 # define ERROR 2
 # define SUCCESS 0
 
-typedef struct s_ray
+typedef struct	s_ray
 {
-    float		ray_angle;
+	float		ray_angle;
 	float		wall_hit_x;
 	float		wall_hit_y;
 	float		distance;
@@ -55,27 +55,27 @@ typedef struct s_ray
 	int			wall_hit_content;
 }				t_ray;
 
-typedef struct s_player
+typedef	struct	s_player
 {
-    float x;
-    float y;
-    int turn_d;
-    int walk_d;
-    float angle;
-    float walk_spd;
-    float turn_spd;
-}               t_player;
+	float	x;
+	float	y;
+	int		turn_d;
+	int		walk_d;
+	float	angle;
+	float	walk_spd;
+	float	turn_spd;
+}				t_player;
 
-typedef struct s_texture
+typedef struct	s_texture
 {
-	void 	*img;
-    int 	width;
-    int 	height;
+	void	*img;
+	int		width;
+	int		height;
 	char	*path;
 	int		*color;
-}			t_texture;
+}				t_texture;
 
-typedef	struct s_three_d
+typedef	struct	s_three_d
 {
 	float	cor_distance;
 	float	dis_proj_pln;
@@ -84,14 +84,14 @@ typedef	struct s_three_d
 	float	wall_bottom_px;
 }				t_three_d;
 
-typedef struct s_color
+typedef struct	s_color
 {
 	int	r;
 	int g;
 	int b;
 }				t_color;
 
-typedef	struct s_map
+typedef	struct	s_map
 {
 	char	*row;
 	int		len;
@@ -120,11 +120,26 @@ typedef struct	s_struct
 t_struct	*g_data;
 t_player	*g_player;
 t_ray		*g_ray;
-t_three_d	threed;
-t_texture	texture[5];
+t_three_d	g_threed;
+t_texture	g_texture[5];
 int			g_read_nb;
 
-int     handle_argv(char *str);
+int		keypress(int keycode);
+int		keyrelease(int keycode);
+int		loop(void);
+void	move_player(void);
+int		handle_argv(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
+char	**ft_split(const char *ss, char c);
+int		read_line(char *line);
+int		read_color(char *line, t_color *color);
+int		parts_number(char **parts);
+int		parts_free(char **parts);
+int		init_map(char *line);
+int		send_player_position(char *row, int y);
+int		ft_read(char *file_name);
+int		read_map_row(char *line);
+int		read_resolution(char *line);
+int		read_texture(char *line, t_texture *txt);
+int		set_error(char *message);
 #endif

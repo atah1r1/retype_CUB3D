@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_argv.c                                      :+:      :+:    :+:   */
+/*   handle_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 10:50:30 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 14:20:54 by atahiri          ###   ########.fr       */
+/*   Created: 2020/10/29 14:01:39 by atahiri           #+#    #+#             */
+/*   Updated: 2020/10/29 14:21:33 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/cub3d.h"
 
-int		handle_argv(char *str)
+int		handle_color(t_color *color)
 {
-	int len;
-
-	len = ft_strlen(str);
-	if (ft_strncmp(str + (len - 4), ".cub", 4))
-		return (ERROR);
-	return (SUCCESS);
+	return ((color->r * 256 * 256) + (color->g * 256) + color->b);
 }

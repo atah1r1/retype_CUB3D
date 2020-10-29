@@ -6,7 +6,7 @@
 #    By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/29 10:43:07 by atahiri           #+#    #+#              #
-#    Updated: 2020/10/29 11:03:13 by atahiri          ###   ########.fr        #
+#    Updated: 2020/10/29 13:21:12 by atahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = gcc
 NAME = cub3d.a
 AR = ar
 FLAGS = -Wall -Werror -Wextra
-SRC = *.c gnl_function/*.c libft_functions/*.c
+SRC = *.c gnl_function/*.c libft_functions/*.c read_handle_file/*.c
 
 all:$(NAME)
 

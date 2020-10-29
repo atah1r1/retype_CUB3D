@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_argv.c                                      :+:      :+:    :+:   */
+/*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 10:50:30 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 14:20:54 by atahiri          ###   ########.fr       */
+/*   Created: 2020/10/29 13:42:57 by atahiri           #+#    #+#             */
+/*   Updated: 2020/10/29 13:52:49 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/cub3d.h"
 
-int		handle_argv(char *str)
+int	loop(void)
 {
-	int len;
-
-	len = ft_strlen(str);
-	if (ft_strncmp(str + (len - 4), ".cub", 4))
-		return (ERROR);
-	return (SUCCESS);
+	move_player();
+	cast_rays();
+	three_d();
+	mlx_put_image_to_window(g_data->ptr, g_data->win, g_data->image3d, 0, 0);
+	return (0);
 }

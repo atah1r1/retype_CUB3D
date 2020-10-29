@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_argv.c                                      :+:      :+:    :+:   */
+/*   set_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 10:50:30 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 14:20:54 by atahiri          ###   ########.fr       */
+/*   Created: 2020/10/29 13:24:41 by atahiri           #+#    #+#             */
+/*   Updated: 2020/10/29 13:24:53 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/cub3d.h"
+#include "../include/cub3d.h"
 
-int		handle_argv(char *str)
+char    *g_error;
+
+int     set_error(char *message)
 {
-	int len;
-
-	len = ft_strlen(str);
-	if (ft_strncmp(str + (len - 4), ".cub", 4))
-		return (ERROR);
-	return (SUCCESS);
+    g_error = message;
+    return(ERROR);
 }
