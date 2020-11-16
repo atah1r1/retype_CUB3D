@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/29 14:22:35 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/16 12:03:23 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ typedef struct	s_ray
 	float		wall_hit_y;
 	float		distance;
 	int			hit_ver;
-	int			wall_facing_up;
-	int			wall_facing_down;
-	int			wall_facing_left;
-	int			wall_facing_right;
+	int			wall_up;
+	int			wall_down;
+	int			wall_left;
+	int			wall_right;
 	int			wall_hit_content;
 }				t_ray;
 
