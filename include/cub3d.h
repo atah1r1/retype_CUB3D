@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/17 17:58:07 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/18 00:43:01 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,4 +143,5 @@ int		read_resolution(char *line);
 int		read_texture(char *line, t_texture *txt);
 int		set_error(char *message);
 float	distance_between_points(float x1, float y1, float x2, float y2);
+
 #endif

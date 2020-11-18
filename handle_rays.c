@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 11:54:06 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/17 17:55:12 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/18 13:21:32 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	handle_rays(int s_id)
 {
-	float xstep;
-	float ystep;
-
 	g_ray[s_id].hit_ver = 0;
 	g_ray[s_id].ray_angle = normalize_angle(g_ray[s_id].ray_angle);
 	g_ray[s_id].wall_down = g_ray[s_id].ray_angle > 0 &&
@@ -25,19 +22,22 @@ void	handle_rays(int s_id)
 	g_ray[s_id].wall_right = g_ray[s_id].ray_angle < 0.5 * M_PI ||
 								g_ray[s_id].ray_angle > 1.5 * M_PI;
 	g_ray[s_id].wall_left = !g_ray[s_id].wall_right;
-	find_horz_wall_hint(xstep, ystep, s_id);
+	find_horz_wall_hint(s_id);
 }
 
-void	find_horz_wall_hint(float xstep, float ystep, int s_id)
+void	find_horz_wall_hint(int s_id)
 {
 	int		found_h_wall;
 	float	x_intercept;
 	float	y_intercept;
+	float	xstep;
+	float	ystep;
 
 	found_h_wall = 0;
 	y_intercept = floor(g_player->y / TILE_SIZE) * TILE_SIZE;
 	y_intercept += g_ray[s_id].wall_up ? TILE_SIZE : 0;
-	x_intercept = g_player->x + (y_intercept - g_player->y) / tan(g_ray[s_id].ray_angle);
+	x_intercept = g_player->x + (y_intercept - g_player->y) /
+		tan(g_ray[s_id].ray_angle);
 	ystep = TILE_SIZE;
 	ystep *= g_ray[s_id].wall_up ? -1 : 1;
 	xstep = TILE_SIZE / tan(g_ray[s_id].ray_angle);

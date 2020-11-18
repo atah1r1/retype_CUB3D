@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:15:59 by atahiri           #+#    #+#             */
-/*   Updated: 2020/10/30 11:32:19 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/18 03:11:23 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ void		tx_check(int i, int j, int tx, int textureoffsetx)
 	float	distancefromtop;
 	int		texelcolor;
 
-	if (!g_ray[i].hit_ver && g_ray[i].wall_facing_up)
+	if (!g_ray[i].hit_ver && g_ray[i].wall_up)
 		tx = 0;
-	else if (!g_ray[i].hit_ver && g_ray[i].wall_facing_down)
+	else if (!g_ray[i].hit_ver && g_ray[i].wall_down)
 		tx = 1;
-	else if (g_ray[i].hit_ver && g_ray[i].wall_facing_right)
+	else if (g_ray[i].hit_ver && g_ray[i].wall_right)
 		tx = 2;
-	else if (g_ray[i].hit_ver && g_ray[i].wall_facing_left)
+	else if (g_ray[i].hit_ver && g_ray[i].wall_left)
 		tx = 3;
 	distancefromtop = (float)j + (g_threed.prj_wall_h / 2.0F) -
 		((float)g_data->w_height / 2.0F);
