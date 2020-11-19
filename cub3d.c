@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:44:01 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/18 13:34:53 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:03:58 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ int	main(int argc, char **argv)
 	if (!(g_player = (t_player*)malloc(sizeof(t_player))))
 		return (0);
 	ft_read(argv[1]);
+	// int i = 0;
+    // while (g_data->map_height > i)
+    // {
+    //     printf("LEN ========= %d \t", g_data->map[i].len);
+    //     printf("%s\n", g_data->map[i].row);
+    //     i++;
+    // }
+	// printf("R %i %i\n", g_data->w_width, g_data->w_height);
+    // printf("F r:%i g:%i b:%i\n", g_data->floor.r, g_data->floor.g, g_data->floor.b);
+    // printf("C r:%i g:%i b:%i\n", g_data->ceil.r, g_data->ceil.g, g_data->ceil.b);
+    // printf("NO = %s\n", g_texture[0].path);
+    // printf("SO = %s\n", g_texture[1].path);
+    // printf("WE = %s\n", g_texture[2].path);
+    // printf("EA = %s\n", g_texture[3].path);
+    // printf("S = %s\n", g_texture[4].path);
+    // printf("==== %d\n", g_data->map_height);
 	if (!(g_data->ptr = mlx_init()))
 		return (0);
 	if (!(g_data->win = mlx_new_window(g_data->ptr, g_data->w_width, g_data->w_height, "Cub3d By atah1r1")))

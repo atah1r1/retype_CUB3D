@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/18 00:43:01 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/19 12:39:09 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,27 @@
 
 # define ERROR 2
 # define SUCCESS 0
+
+typedef struct	s_hv
+{
+	float	x_intercept;
+	float	y_intercept;
+	float	xstep;
+	float	ystep;
+	float	next_horz_x;
+	float	next_horz_y;
+	int		found_h_wall;
+	float	wall_horz_x;
+	float	wall_horz_y;
+	float	horz_hit_dist;
+	float	next_vert_x;
+	float	next_vert_y;
+	int		found_v_wall;
+	float	wall_vert_x;
+	float	wall_vert_y;
+	float	vert_hit_dist;
+}				t_hv;
+
 
 typedef struct	s_ray
 {
@@ -122,6 +143,7 @@ t_player	*g_player;
 t_ray		*g_ray;
 t_three_d	g_threed;
 t_texture	g_texture[5];
+t_hv		g_hv;
 int			g_read_nb;
 
 int		keypress(int keycode);
@@ -142,6 +164,12 @@ int		read_map_row(char *line);
 int		read_resolution(char *line);
 int		read_texture(char *line, t_texture *txt);
 int		set_error(char *message);
-float	distance_between_points(float x1, float y1, float x2, float y2);
+float	dist_btw_p(float x1, float y1, float x2, float y2);
+void	handle_rays(int s_id);
+int		wall_check(float x, float y);
+float	normalize_angle(float angle);
+int		handle_color(t_color *color);
+void	three_d(void);
+void	cast_rays(void);
 
 #endif
