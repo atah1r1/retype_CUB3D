@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/19 12:39:09 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/19 14:24:01 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,6 @@ float	normalize_angle(float angle);
 int		handle_color(t_color *color);
 void	three_d(void);
 void	cast_rays(void);
+void	handle_texture();
 
 #endif
