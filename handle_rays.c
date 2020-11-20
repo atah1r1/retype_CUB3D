@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 11:54:06 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/19 12:37:07 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/20 01:46:07 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	find_vert_distance(int s_id)
 {
 	while (g_hv.next_vert_x >= 0 &&
-			g_hv.next_vert_x <= (g_data->map->len * TILE_SIZE) &&
+			g_hv.next_vert_x <= (20 * TILE_SIZE) &&
 			g_hv.next_vert_y >= 0 &&
 			g_hv.next_vert_y <= (g_data->map_height - 1) * TILE_SIZE)
 	{
@@ -64,7 +64,7 @@ void	find_horz_distance(int s_id)
 	g_hv.wall_horz_x = 0;
 	g_hv.wall_horz_y = 0;
 	while (g_hv.next_horz_x >= 0 &&
-			g_hv.next_horz_x <= (g_data->map->len * TILE_SIZE) &&
+			g_hv.next_horz_x <= (20 * TILE_SIZE) &&
 			g_hv.next_horz_y >= 0 &&
 			g_hv.next_horz_y <= (g_data->map_height - 1) * TILE_SIZE)
 	{

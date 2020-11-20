@@ -6,11 +6,21 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:44:01 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/19 14:24:30 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/19 23:55:07 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/cub3d.h"
+
+void	initialize_player()
+{
+	g_player->x = (20 * TILE_SIZE) / 2;
+	g_player->y = (g_data->map_height * TILE_SIZE) / 2;
+	g_player->turn_d = 0;
+	g_player->walk_d = 0;
+	g_player->turn_spd = 1 * RAD;
+	g_player->walk_spd = TILE_SIZE / 10;
+}
 
 int	main(int argc, char **argv)
 {
@@ -29,6 +39,12 @@ int	main(int argc, char **argv)
 	if (!(g_player = (t_player*)malloc(sizeof(t_player))))
 		return (0);
 	ft_read(argv[1]);
+	// printf("NO = %s\n", g_texture[0].path);
+    // printf("SO = %s\n", g_texture[1].path);
+    // printf("WE = %s\n", g_texture[2].path);
+    // printf("EA = %s\n", g_texture[3].path);
+	// printf("SS = %s\n", g_texture[4].path);
+	initialize_player();
 	if (!(g_data->ptr = mlx_init()))
 		return (0);
 	if (!(g_data->win = mlx_new_window(g_data->ptr, g_data->w_width, g_data->w_height, "Cub3d By atah1r1")))

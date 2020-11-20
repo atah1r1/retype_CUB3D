@@ -6,7 +6,7 @@
 /*   By: atahiri <atahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:48:50 by atahiri           #+#    #+#             */
-/*   Updated: 2020/11/19 14:24:01 by atahiri          ###   ########.fr       */
+/*   Updated: 2020/11/20 00:22:50 by atahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,7 @@ typedef struct	s_struct
 	int		w_height;
 	void	*ptr;
 	void	*win;
-	void	*image;
 	void	*image3d;
-	int		*matrix;
 	int		*matrix3d;
 	int		map_height;
 	t_color ceil;
